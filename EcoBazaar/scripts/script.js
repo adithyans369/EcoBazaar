@@ -1,35 +1,32 @@
 // List of image paths inside "images/" folder
 const images = [
-  // Bag images
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b1.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b2.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b3.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b4.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b5.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b6.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b7.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b8.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b9.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b10.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/bag/b11.jpeg",
-  
-  // Brush images
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/brush/br1.jpeg",
-  
+  "assets/images/bag/b1.jpeg",
+  "assets/images/bag/b2.jpeg",
+  "assets/images/bag/b3.jpeg",
+  "assets/images/bag/b4.jpeg",
+  "assets/images/bag/b5.jpeg",
+  "assets/images/bag/b6.jpeg",
+  "assets/images/bag/b7.jpeg",
+  "assets/images/bag/b8.jpeg",
+  "assets/images/bag/b9.jpeg",
+  "assets/images/bag/b10.jpeg",
+  "assets/images/bag/b11.jpeg",
 
-  // Comb images
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c1.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c2.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c3.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c4.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c5.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c6.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c7.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c8.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c9.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c10.jpeg",
-  "/home/adithyan/Desktop/EcoBazaar/assets/images/comb/c11.jpeg"
+  "assets/images/brush/br1.png",
+
+  "assets/images/comb/c1.jpeg",
+  "assets/images/comb/c2.jpeg",
+  "assets/images/comb/c3.jpeg",
+  "assets/images/comb/c4.jpeg",
+  "assets/images/comb/c5.jpeg",
+  "assets/images/comb/c6.jpeg",
+  "assets/images/comb/c7.jpeg",
+  "assets/images/comb/c8.jpeg",
+  "assets/images/comb/c9.jpeg",
+  "assets/images/comb/c10.jpeg",
+  "assets/images/comb/c11.jpeg"
 ];
+
 
 let currentIndex = Math.floor(Math.random() * images.length);
 const imgEl = document.getElementById("carousel-image");
@@ -63,3 +60,4 @@ setInterval(() => {
   const nextIndex = Math.floor(Math.random() * images.length);
   showImage(nextIndex);
 }, 3000);
+

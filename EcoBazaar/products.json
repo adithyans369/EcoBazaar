@@ -1,0 +1,163 @@
+[
+  {
+    "id": "bag1",
+    "name": "Jute Shopping Bag",
+    "price": 199,
+    "description": "Eco-friendly reusable jute shopping bag.",
+    "image": "assets/images/bag/b1.jpeg"
+  },
+  {
+    "id": "bag2",
+    "name": "Canvas Tote Bag",
+    "price": 249,
+    "description": "Strong canvas tote for daily use.",
+    "image": "assets/images/bag/b2.jpeg"
+  },
+  {
+    "id": "bag3",
+    "name": "Cotton Handbag",
+    "price": 229,
+    "description": "Soft cotton handbag with eco touch.",
+    "image": "assets/images/bag/b3.jpeg"
+  },
+  {
+    "id": "bag4",
+    "name": "Foldable Bag",
+    "price": 149,
+    "description": "Lightweight and foldable grocery bag.",
+    "image": "assets/images/bag/b4.jpeg"
+  },
+  {
+    "id": "bag5",
+    "name": "Printed Eco Bag",
+    "price": 199,
+    "description": "Stylish printed eco-friendly bag.",
+    "image": "assets/images/bag/b5.jpeg"
+  },
+  {
+    "id": "bag6",
+    "name": "Multipurpose Jute Bag",
+    "price": 259,
+    "description": "Durable jute bag for multiple uses.",
+    "image": "assets/images/bag/b6.jpeg"
+  },
+  {
+    "id": "bag7",
+    "name": "Eco Sling Bag",
+    "price": 179,
+    "description": "Handy and compact sling-style eco bag.",
+    "image": "assets/images/bag/b7.jpeg"
+  },
+  {
+    "id": "bag8",
+    "name": "Shopping Carry Bag",
+    "price": 189,
+    "description": "Reusable carry bag for shopping.",
+    "image": "assets/images/bag/b8.jpeg"
+  },
+  {
+    "id": "bag9",
+    "name": "Organic Bag",
+    "price": 239,
+    "description": "Organic cotton shopping bag.",
+    "image": "assets/images/bag/b9.jpeg"
+  },
+  {
+    "id": "bag10",
+    "name": "Handwoven Bag",
+    "price": 279,
+    "description": "Artisan handwoven sustainable bag.",
+    "image": "assets/images/bag/b10.jpeg"
+  },
+  {
+    "id": "bag11",
+    "name": "Classic Eco Bag",
+    "price": 209,
+    "description": "Classic design with an eco twist.",
+    "image": "assets/images/bag/b11.jpeg"
+  },
+  {
+    "id": "brush1",
+    "name": "Bamboo Toothbrush",
+    "price": 59,
+    "description": "Biodegradable bamboo toothbrush.",
+    "image": "assets/images/brush/br1.jpeg"
+  },
+  {
+    "id": "comb1",
+    "name": "Neem Wood Comb",
+    "price": 49,
+    "description": "Natural neem wood comb.",
+    "image": "assets/images/comb/c1.jpeg"
+  },
+  {
+    "id": "comb2",
+    "name": "Wide Tooth Comb",
+    "price": 59,
+    "description": "Eco-friendly wide tooth comb.",
+    "image": "assets/images/comb/c2.jpeg"
+  },
+  {
+    "id": "comb3",
+    "name": "Fine Tooth Comb",
+    "price": 39,
+    "description": "Fine-toothed comb made from wood.",
+    "image": "assets/images/comb/c3.jpeg"
+  },
+  {
+    "id": "comb4",
+    "name": "Dual Comb",
+    "price": 69,
+    "description": "Wide and fine tooth in one comb.",
+    "image": "assets/images/comb/c4.jpeg"
+  },
+  {
+    "id": "comb5",
+    "name": "Compact Wooden Comb",
+    "price": 45,
+    "description": "Portable pocket-friendly comb.",
+    "image": "assets/images/comb/c5.jpeg"
+  },
+  {
+    "id": "comb6",
+    "name": "Anti-Static Comb",
+    "price": 55,
+    "description": "Reduces static and frizz.",
+    "image": "assets/images/comb/c6.jpeg"
+  },
+  {
+    "id": "comb7",
+    "name": "Detangler Comb",
+    "price": 65,
+    "description": "Gently detangles hair with ease.",
+    "image": "assets/images/comb/c7.jpeg"
+  },
+  {
+    "id": "comb8",
+    "name": "Handle Comb",
+    "price": 70,
+    "description": "Easy grip handle for better use.",
+    "image": "assets/images/comb/c8.jpeg"
+  },
+  {
+    "id": "comb9",
+    "name": "Curved Comb",
+    "price": 50,
+    "description": "Ergonomic design for daily use.",
+    "image": "assets/images/comb/c9.jpeg"
+  },
+  {
+    "id": "comb10",
+    "name": "Baby Comb",
+    "price": 35,
+    "description": "Safe and soft for babies.",
+    "image": "assets/images/comb/c10.jpeg"
+  },
+  {
+    "id": "comb11",
+    "name": "Salon Style Comb",
+    "price": 60,
+    "description": "Professional salon-grade comb.",
+    "image": "assets/images/comb/c11.jpeg"
+  }
+]
