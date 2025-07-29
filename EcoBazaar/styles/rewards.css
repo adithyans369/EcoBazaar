@@ -1,0 +1,34 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f0f9f0;
+}
+
+.title {
+  text-align: center;
+  color: #2f7034;
+}
+
+.reward-form, .points-display {
+  background: white;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+label, select, input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #2f7034;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+}
