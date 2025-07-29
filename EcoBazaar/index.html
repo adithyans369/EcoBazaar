@@ -5,6 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EcoBazaar</title>
   <link rel="stylesheet" href="styles/style.css" />
+  <style>
+    /* Product card styles (from explore.html) */
+    .featured-section {
+      padding: 40px 20px;
+      background-color: #f2f4f3;
+    }
+
+    .featured-section h2 {
+      text-align: center;
+      color: #2d572c;
+      margin-bottom: 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      color: #2d572c;
+    }
+
+    .product-card p {
+      margin: 5px 0;
+    }
+
+    .product-card button {
+      margin-top: 8px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2d572c;
+      color: white;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background-color: #1e3d1d;
+    }
+  </style>
 </head>
 <body>
 
@@ -38,6 +100,52 @@
     </div>
   </section>
 
+  <!-- 🛍️ Featured Products Section -->
+  <section class="featured-section">
+    <h2>🌟 Featured Products</h2>
+    <div class="product-grid" id="featured-grid">
+      <!-- Cards will be loaded here -->
+    </div>
+  </section>
+
   <script src="scripts/script.js"></script>
+
+  <!-- 🛒 Featured Products Loader -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const featuredGrid = document.getElementById("featured-grid");
+
+      fetch("products.json")
+        .then(response => {
+          if (!response.ok) throw new Error("Failed to fetch featured products.");
+          return response.json();
+        })
+        .then(products => {
+          const topProducts = products.slice(0, 4); // Show only first 4
+          topProducts.forEach(product => {
+            const card = document.createElement("div");
+            card.className = "product-card";
+            card.innerHTML = `
+              <img src="${product.image}" alt="${product.name}">
+              <h3>${product.name}</h3>
+              <p>${product.description}</p>
+              <p>₹${product.price}</p>
+              <button onclick="addToCart('${product.name}', ${product.price}, '${product.image}')">Add to Cart</button>
+            `;
+            featuredGrid.appendChild(card);
+          });
+        })
+        .catch(error => {
+          console.error("Could not load featured products:", error);
+        });
+    });
+
+    function addToCart(name, price, image) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price, image });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
 </body>
 </html>
