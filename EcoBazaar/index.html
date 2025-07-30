@@ -69,6 +69,7 @@
   </style>
 </head>
 <body>
+<div id="userInfo"></div>
 
   <!-- 🌍 Navbar -->
   <header class="navbar">
@@ -79,7 +80,8 @@
         <li><a href="#">Shop</a></li>
         <li><a href="rewards.html">Rewards</a></li> <!-- ✅ Updated -->
         <li><a href="#">Sell</a></li>
-        <li><a href="#">Login</a></li>
+        <a href="login.html"><button>Login</button></a>
+
       </ul>
     </nav>
   </header>
@@ -147,5 +149,21 @@
       alert(`${name} added to cart!`);
     }
   </script>
+  <script>
+  const user = localStorage.getItem("user");
+  const userInfoDiv = document.getElementById("userInfo");
+
+  if (user) {
+    userInfoDiv.innerHTML = `<p>Welcome, <strong>${user}</strong>! <button onclick="logout()">Logout</button></p>`;
+  } else {
+    userInfoDiv.innerHTML = `<a href="/login.html"><button>Login</button></a>`;
+  }
+
+  function logout() {
+    localStorage.removeItem("user");
+    window.location.reload();
+  }
+</script>
+
 </body>
 </html>

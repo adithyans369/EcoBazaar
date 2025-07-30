@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Eco Rewards - EcoBazaar</title>
-  <link rel="stylesheet" href="styles/rewards.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoBazaar - Rewards</title>
+  <link rel="stylesheet" href="styles/rewards.css" />
 </head>
 <body>
-  <h1 class="title">Eco Rewards</h1>
-
-  <section class="reward-form">
-    <h2>Submit Your Eco Action</h2>
-    <form id="proofForm">
-      <label for="action">Action Type:</label>
-      <select id="action" required>
-        <option value="tree">Planted a Tree</option>
-        <option value="cleanup">Participated in Cleanup</option>
-        <option value="reuse">Used Reusable Items</option>
+  <div class="container">
+    <h1>Claim Your Rewards</h1>
+    <form id="reward-form" enctype="multipart/form-data">
+      <label for="action">Choose an action:</label>
+      <select id="action" name="action" required>
+        <option value="">--Select--</option>
+        <option value="tree_planting">Tree Planting</option>
+        <option value="cleaning_drive">Cleaning Drive</option>
+        <option value="donation">Donation</option>
       </select>
 
-      <label for="proof">Upload Proof (Image/Link):</label>
-      <input type="text" id="proof" placeholder="Image URL or proof description" required>
+      <label for="before">Before Image:</label>
+      <input type="file" id="before" name="before" accept="image/*" required />
+      <div class="image-preview" id="before-preview"></div>
+
+      <label for="after">After Image:</label>
+      <input type="file" id="after" name="after" accept="image/*" required />
+      <div class="image-preview" id="after-preview"></div>
 
       <button type="submit">Submit</button>
     </form>
-  </section>
-
-  <section class="points-display">
-    <h2>Your Reward Points</h2>
-    <p id="points">Loading...</p>
-  </section>
+    <p id="response-msg"></p>
+  </div>
 
   <script src="scripts/rewards.js"></script>
 </body>

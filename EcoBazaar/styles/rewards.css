@@ -1,34 +1,56 @@
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #f0f9f0;
+  background: #f2f9f2;
+  margin: 0;
+  padding: 2em;
 }
 
-.title {
-  text-align: center;
-  color: #2f7034;
-}
-
-.reward-form, .points-display {
+.container {
+  max-width: 600px;
+  margin: auto;
   background: white;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 500px;
+  padding: 2em;
   border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-label, select, input {
+label {
   display: block;
-  width: 100%;
-  margin: 10px 0;
+  margin-top: 15px;
 }
 
+input[type="file"],
+select,
 button {
-  background-color: #2f7034;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.image-preview {
+  margin-top: 10px;
+  position: relative;
+}
+
+.image-preview img {
+  width: 100%;
+  border-radius: 8px;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.image-preview .close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: #ff4444;
   color: white;
   border: none;
-  padding: 10px;
+  border-radius: 50%;
+  font-size: 16px;
   cursor: pointer;
-  width: 100%;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
 }
