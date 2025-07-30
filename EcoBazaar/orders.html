@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Orders - EcoBazaar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+    }
+    h2 {
+      color: #388e3c;
+      text-align: center;
+    }
+    .orders-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .order-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .order-details {
+      flex-grow: 1;
+    }
+    .order-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+    .order-details p {
+      margin: 5px 0;
+    }
+    .cancel-btn {
+      padding: 8px 12px;
+      background-color: #c62828;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cancel-btn:hover {
+      background-color: #a31515;
+    }
+  </style>
+</head>
+<body>
+  <h2>Your Orders</h2>
+  <div class="orders-container" id="orders-list"></div>
+
+  <script>
+    function renderOrders() {
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+      const container = document.getElementById("orders-list");
+      container.innerHTML = "";
+
+      if (orders.length === 0) {
+        container.innerHTML = "<p>No orders yet.</p>";
+        return;
+      }
+
+      orders.forEach((order, index) => {
+        const card = document.createElement("div");
+        card.className = "order-card";
+        card.innerHTML = `
+          <img src="${order.image}" alt="${order.name}" />
+          <div class="order-details">
+            <p><strong>${order.name}</strong></p>
+            <p>Price: ₹${order.price}</p>
+            <p>Quantity: ${order.quantity}</p>
+            <p>Total: ₹${order.price * order.quantity}</p>
+            <p>Order #${index + 1}</p>
+          </div>
+          <button class="cancel-btn" onclick="cancelOrder(${index})">Cancel</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function cancelOrder(index) {
+      const orders = JSON.parse(localStorage.getItem('orders')) || [];
+      if (confirm("Are you sure you want to cancel this order?")) {
+        orders.splice(index, 1);
+        localStorage.setItem('orders', JSON.stringify(orders));
+        renderOrders();
+      }
+    }
+
+    renderOrders();
+  </script>
+</body>
+</html>

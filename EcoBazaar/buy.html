@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - EcoBazaar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #388e3c;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .submit-btn {
+      background-color: #388e3c;
+      color: white;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Enter Shipping & Payment Details</h2>
+    <form onsubmit="submitForm(event)">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="address">Address</label>
+      <input type="text" id="address" required>
+
+      <label for="city">City</label>
+      <input type="text" id="city" required>
+
+      <label for="zip">ZIP Code</label>
+      <input type="text" id="zip" required>
+
+      <label for="payment">Payment Method</label>
+      <select id="payment" required>
+        <option value="">--Select--</option>
+        <option value="cod">Cash on Delivery</option>
+        <option value="upi">UPI</option>
+        <option value="card">Credit/Debit Card</option>
+      </select>
+
+      <button type="submit" class="submit-btn">Place Order</button>
+    </form>
+  </div>
+<!-- Add this inside your <body> tag in buy.html -->
+<div id="popup" style="
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 1000;
+">
+  <h3 style="color: #388e3c;">✅ Order Confirmed!</h3>
+  <p>Thank you for shopping with EcoBazaar.</p>
+  <button onclick="closePopup()" style="
+    padding: 10px 20px;
+    margin-top: 15px;
+    background: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  ">OK</button>
+</div>
+
+  <script>
+  function submitForm(event) {
+  event.preventDefault();
+
+  const product = JSON.parse(localStorage.getItem('selectedProduct'));
+  if (!product) return;
+
+  // Save to 'orders' in localStorage
+  const orders = JSON.parse(localStorage.getItem('orders')) || [];
+  orders.push(product);
+  localStorage.setItem('orders', JSON.stringify(orders));
+
+  // Clear selected product and show confirmation popup
+  localStorage.removeItem('selectedProduct');
+  document.getElementById("popup").style.display = "block";
+}
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  window.location.href = "explore.html"; // Redirect after order placed
+}
+
+
+</script>
+
+  
+</body>
+</html>

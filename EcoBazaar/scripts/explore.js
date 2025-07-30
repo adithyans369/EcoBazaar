@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>${product.name}</h3>
           <p>${product.description}</p>
           <p>₹${product.price}</p>
-          <button onclick="alert('Buying ${product.name}')">Buy</button>
+         <button onclick="proceedToBuy('${product.id}', '${product.name}', ${product.price}, '${product.image}')">Buy</button>
           <button onclick="alert('Details of ${product.name}')">Details</button>
           <button onclick="addToCart('${product.id}', '${product.name}', ${product.price}, '${product.image}')">Add to Cart</button>
         `;
@@ -46,4 +46,14 @@ function addToCart(id, name, price, image) {
 
   localStorage.setItem('cart', JSON.stringify(cart));
   alert(`${name} added to cart!`);
+}
+function proceedToBuy(id, name, price, image) {
+  localStorage.setItem('selectedProduct', JSON.stringify({
+    id,
+    name,
+    price,
+    image,
+    quantity: 1
+  }));
+  window.location.href = 'buy.html';
 }
